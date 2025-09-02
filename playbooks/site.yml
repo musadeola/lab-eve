@@ -1,0 +1,18 @@
+---
+- name: Perform installation pre-checks
+  import_playbook: precheck.yml
+
+- name: Install EV-NG Community Edition
+  import_playbook: install.yml
+
+- name: Perform post-install configuration
+  import_playbook: configure.yml
+
+- name: Import lab images and fix permissions
+  import_playbook: import_images.yml
+
+- name: Upload lab schema files from local machine
+  import_playbook: upload_labs.yml
+
+- name: Install ZeroTier and join network
+  import_playbook: zerotier.yml
